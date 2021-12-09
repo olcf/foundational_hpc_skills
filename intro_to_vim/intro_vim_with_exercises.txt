@@ -20,7 +20,8 @@ The Basics
 	:q - Quit
 	:wq - Write and quit
 	:q! - Force Quit (don't save)
-	:e <filename> - Open a file (or create and open a file if it doesn't already exist)
+	:e <filename> - Open a different file without quitting Vim (or create and open a file if it doesn't already exist)
+
 
 
 Brush to the canvas
@@ -55,6 +56,19 @@ Scanning the canvas
 
 
 	zz - center cursor on screen
+
+-------------------------------------------------------
+EXERCISE SET #1
+
+1. Quit out of this file and reopen it.
+2. Write something in these parantheses (), then save and quit and reopen.
+	2a. Try out the different ways of entering Insert mode for writing
+3. Move around the file. Try to go all the way to the top, and all the way
+   to the bottom.
+
+-------------------------------------------------------
+
+
 
 Getting from a to b: Motions
 ===
