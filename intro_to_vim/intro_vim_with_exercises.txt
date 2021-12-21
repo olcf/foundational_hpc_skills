@@ -3,6 +3,10 @@ A Brief Introduction to the Vim Text Editor
 	Adapted from Shawn Biddle's Vim Training
 	https://github.com/shawncplus
 
+***********************
+The Basic Stuff We Need
+***********************
+
 
 Modes
 ===
@@ -16,7 +20,7 @@ The Basics
 ===
 
 	vim <file> - open <file> if it exists, otherwise create new <file>
-	vim -R <file> - open <file> in ReadOnly mode
+	vim -R <file> -  open <file> in ReadOnly mode
 	:q - Quit
 	:wq - Write and quit
 	:q! - Force Quit (don't save)
@@ -28,14 +32,7 @@ Brush to the canvas
 ===
 
 	i - Enter insert mode at cursor
-	I - Enter insert mode at first non-blank character
-	s - Delete character under cursor and enter insert mode
-	S - Delete line and begin insert at beginning of same line
-	a - Enter insert mode _after_ cursor
-	A - Enter insert mode at the end of the line
 	o - Enter insert mode on the next line
-	O - enter insert mode on the above line
-	C - Delete from cursor to end of line and begin insert
 
 
 Picking up the brush
@@ -57,6 +54,9 @@ Scanning the canvas
 
 	zz - center cursor on screen
 
+	(you can use the arrow keys as well, hjkl is good 
+	because of proximity to other keys)
+
 -------------------------------------------------------
 EXERCISE SET #1
 
@@ -68,6 +68,51 @@ EXERCISE SET #1
 
 -------------------------------------------------------
 
+
+Visual Mode (for highlighting text)
+===
+
+	<ESC>V - Visual mode
+
+Copy/Cut/Paste
+===
+
+	y  - Yank (i.e. copy)
+	d  - "delete" (actually behaves like cut) 
+	p  - paste after cursor
+
+
+Undo/Redo
+===
+
+	u - undo last change
+	CTRL+R - redo last undo  
+
+
+Searching
+===
+
+	/  - Forward
+	?  - Backward
+	n  - Next result, forward in direction of search
+	N  - Next result, backward in direction of search
+
+
+-------------------------------------------------------
+EXERCISE SET #2
+
+1. Highlight this line with Visual mode, delete it, then undo the deletion.
+2. Paste what you deleted in the parantheses (), remember that 'd' actually works like a cut operation.
+	2a. Also try yanking and pasting into the parantheses.
+3. Search for the word 'Bonus'. Remember that search is case sensitive. Move between each 'Bonus' in this text file
+   with 'n' and 'N'
+
+-------------------------------------------------------
+
+
+******************************************************
+The Advanced Stuff You Don't Need But Fun to Try
+******************************************************
 
 
 Getting from a to b: Motions
@@ -87,6 +132,7 @@ Basics: wWbBeE
 	e - Forward to the next end of word
 	E - Forward to the next end of WORD
 
+Try it out:
 	w                             W
 	----->--->---->------->---->  ----------------------------->
 	These are some example words, words/with/special/separators (and also others!). Cool, huh? 
@@ -105,11 +151,53 @@ All follow [(n)um]<verb><n(o)un> syntax
 	[n]t<o> - Forward until (nth) (o)  (Exclusive)
 	[n]T<o> - Backward until (nth) (o) (Exclusive)
 
+Try it out:
 	abcdefg, abcdefg, abcdefg
 	The quick brown fox jumps over the lazy dog.
 
+Scrolling
+===
 
-Searching
+	CTRL+d - Scroll down half a page
+	CTRL+u - Scroll up half a page
+	gg     - Go to the top of the file
+	G      - Go to the bottom of the file
+
+-------------------------------------------------------
+
+EXERCISE SET #3
+
+1. Move your cursor to the start and end of this line with just one or two key presses.
+2. Do the scrolling exercise again where you move all the way to the top and all the way to
+the bottom, but this time, go FAST!
+
+-------------------------------------------------------
+
+
+More ways to put brush to the canvas
+===
+
+	i - Enter insert mode at cursor
+	I - Enter insert mode at first non-blank character
+	s - Delete character under cursor and enter insert mode
+	S - Delete line and begin insert at beginning of same line
+	a - Enter insert mode _after_ cursor
+	A - Enter insert mode at the end of the line
+	o - Enter insert mode on the next line
+	O - enter insert mode on the above line
+	C - Delete from cursor to end of line and begin insert
+
+
+Common Copy/Cut/Paste short cuts
+===
+	y  - Yank. Example: yw (yank word)
+	yy - Yank current line
+	d  - "delete" (actually behaves like cut) Example: dw (delete word)
+	dd - "delete" current line
+	p  - paste after cursor
+	P  - paste before cursor
+
+More Searching
 ===
 
 	/  - Forward
@@ -120,28 +208,6 @@ Searching
 	N  - Next result, backward in direction of search
 
 
-Copy/Cut/Paste
-===
-
-	y  - Yank. Example: yw (yank word)
-	yy - Yank current line
-	d  - "delete" (actually behaves like cut) Example: dw (delete word)
-	dd - "delete" current line
-	p  - paste after cursor
-	P  - paste before cursor
-
-
-Undo/Redo
-===
-
-	u - undo last change
-	CTRL+R - redo last undo  
-
-
-Visual Mode (for highlighting text)
-===
-
-	<ESC>V - Visual mode
 
 Bonus - Comments with Visual Block Mode
 ===
@@ -178,3 +244,12 @@ Bonus - Panes
 	:sp (or) CTRL+w s - horizontally split current pane
 	:vsp (or) CTRL+w v - vertically split current pane
 	CTRL+w CTRL+w - switch between current panes in the current window
+
+
+--------------------------------------------------
+EXERCISE SET #4
+
+1. Open a new tab and switch between them.
+2. Have two tabs open, and open four panes in each tab.
+	a. Try writing something in each pane and save it.
+---------------------------------------------------
