@@ -2,6 +2,7 @@ A Brief Introduction to the Vim Text Editor
 =
 	Adapted from Shawn Biddle's Vim Training
 	https://github.com/shawncplus
+	Useful Cheatsheet: https://vimsheet.com/
 
 ***********************
 The Basic Stuff We Need
@@ -209,7 +210,7 @@ More Searching
 
 
 
-Bonus - Comments with Visual Block Mode
+Comments with Visual Block Mode
 ===
 	1) enter Visual Block Mode with : CTRL V
 	2) select lines
@@ -218,7 +219,7 @@ Bonus - Comments with Visual Block Mode
 	5) ESC
 
 
-Bonus - Delete inside
+Delete inside
 ===
 
 	di<enclosing character>  - "Delete inside"
@@ -231,19 +232,20 @@ Bonus - Delete inside
 	}
 
 
-Bonus - Tabs
+Tabs
 ===
 
 	:tabe <filename> - open a new file in a tab
 	gt - go to next tab
 	gT - go to previous tab
 
-Bonus - Panes
+Panes
 ===
 
 	:sp (or) CTRL+w s - horizontally split current pane
 	:vsp (or) CTRL+w v - vertically split current pane
 	CTRL+w CTRL+w - switch between current panes in the current window
+	CTRL+w c - close current pane
 
 
 --------------------------------------------------
