@@ -15,7 +15,31 @@ When you are finished with this challenge you should be prepared to complete mor
 challenges ahead. 
 
 
-pwd, mkdir, rmdir, cd, ls, cp, mv, chmod, rm, find, grep, diff, head, tail, df, du, man
+## The Command Line
+
+The command line is a text interface for a computer. It is the place in which you type the commands 
+that will be interpreted and executed by the computer when you enter them. From the command line, 
+you can run programs and navigate through files and folders just like you would with Windows 
+Explorer on Windows or Finder on MacOS. 
+
+For example, the Windows folder in a Windows command line is `C:\Windows>`. In Unix or Linux, it 
+may be `%` or `>`. In our instance it is `$`. The `$` is preceeded by information about who you are
+(your username), which login node you are on (a group of processors dedicated to handling basic
+interactions with the computers filesystems), and the name of the directory (file, `~` is "home") 
+you are currently located in. 
+
+In front of your cursor, that information that represents the command line will look like this:
+
+```
+[your_id@login1.ascent ~]$
+```
+
+> NOTE: In the following examples, replace "your_id" with whatever your user id is for logging in to 
+> the system. For example, if your user id is "aaa", then your home directory is `ccsopen/home/aaa`.
+
+During the course of this challenge, please note that the `$` you may see in the practice examples 
+is NOT a part of any actual command! It is representing your command line where you should enter the
+command that comes after it. 
 
 
 ## Issuing Commands
@@ -42,12 +66,13 @@ and date at which they were last modified (most recent first), and on a specific
 necessarily the current one. If you are a brand new HPC user, issuing this command should not produce
 a result, as the directory in question is currently empty with no contents to list.
 
-> NOTE: In the following examples, replace "your_id" with whatever your user id is for logging in to the system
-> For example, if your user id is "aaa", then your home directory is `ccsopen/home/aaa`.
-
 ```
 $ ls -t /ccsopen/home/your_id
 ```
+Again, options can be combined together for more concise commands that involve less typing. Additionally,
+the options can be given in any order with the same result. For example, `ls -altr` is the same as 
+`ls -l -t -r -a`.
+
 > NOTE: Commands rarely ask for your confirmation after you hit enter. File and directory deletion
 > is permanent! Always proofread before you enter a command to ensure you don't accidentally perform
 > an action you did not mean to do. 
@@ -62,6 +87,36 @@ Try looking at the manual for the `ls` command, and when you are finished press 
 
 ```
 $ man ls
+```
+
+### Wildcards
+
+When dealing with multiple files, it’s nice to be able to type a single command versus having to type
+a seperate command for each file. That's where wildcards come in. They are generic characters that 
+"fill in" for other characters.
+
+- `*` means match multiple characters (0 or more)
+- `?` means match a single character (1)
+
+For example, suppose the `ls` command reports the following contents of a directory:
+```
+$ ls
+file1   file1a  file1b  file2   file2a  file2b  file3   file3a  file3b
+```
+If we want to see all files that start or end with some specific text, but contain any potential single 
+character, at a specific point we can augment the `ls` command with a phrase that includes `?`. 
+Similarly, if we want to see a listing of all files that contain any number of characters at a specific 
+point, we use the `*` character. Here are examples given the files above:
+
+```
+$ ls file1? 
+file1a  file1b
+
+$ ls file2*
+file2   file2a  file2b
+
+$ ls file?a
+file1a  file2a  file3a
 ```
 
 ## Directories
@@ -86,6 +141,10 @@ filesystem you are currently located. In this case, you are in your own personal
 the same name as your personal login name, which is located inside a directory called "home" containing 
 all users home directories, which is located in a directory called "ccsopen". If you are ever lost and 
 can't remember where you are, simply type `pwd`.
+
+> Typing out the paths to directories can get tiresome! The enviornment variable `$HOME` is the same as
+> `/ccsopen/home/your_id`. You can use it as a shortcut in any command. For example, typing 
+> `$HOME/foundational_hpc_skills` is the same as typing `/ccsopen/home/your_id/foundational_hpc_skills`. 
 
 ### Creating a new directory with the `mkdir` command
 
@@ -187,23 +246,28 @@ Let's change locations and move into our new directory, and use the `pwd` comman
 location. 
 
 ```
-$cd new_folder
-$pwd
+$ cd new_folder
+$ pwd
 /ccsopen/home/your_id/new_folder
-
 ```
 
-We can move back up one directory level back to our home directory like this
+We can move back up one directory level back to our home directory like this:
 
 ```
-$cd ..
-$pwd
+$ cd ..
+$ pwd
 /ccsopen/home/your_id/
 ```
+or like this:
 
-In Unix systems, the `..` symbol means "the directory above the current one" and can be used to climb up 
-higher in the filesystem no matter where you are located (so long as you have permission to be there!).
-If you ever want to return to your home directory, simply type and enter `cd` by itself. 
+```
+$ cd
+$ pwd
+/ccsopen/home/your_id/
+```
+Typing `cd` by itself will take you to your home directory by default. In Unix systems, the `..` symbol 
+means "the directory above the current one" and can be used to climb up higher in the filesystem no matter 
+where you are located (so long as you have permission to be there!).  
 
 
 ## Files
@@ -246,26 +310,43 @@ paste, add, remove, and perform other actions on the text within while it is run
 at file contents with a different command. 
 
 
-### View the contents of a file with `cat`
+### View the contents of a file with `less`
 
-A quick way to view the contents of a file is via the `cat` command, which is short for "concatenate". This 
-command will print the contents of a file to be viewed. Let's look at the text in the two files we created
-"content_l.txt" and "contents_lh.txt". 
+A quick way to view the contents of a file is via the `less` command. This command will print the contents 
+of a file to be viewed. Rather then printing the contents of the file to the command line, using `less` 
+will "open" a file in your shell to allow you to inspect its contents. Let's look at the text in the two 
+files we created ("content_l.txt" and "contents_lh.txt"). For files with more lines than can be displayed, 
+you can scroll down through the file with the arrow keys. When you are finished examining a file, press `q` 
+to exit the viewing mode.
 
 ```
-$ cat content_l.txt
-total 4.0K
--rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 content_l.txt
-drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
+$ less contents_lh.txt
+```
 
-$ cat contents_lh.txt
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 total 8.0K
--rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 content_l.txt
--rw-rw-r-- 1 7vh 7vh  170 Dec  1 11:41 contents_lh.txt
 drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
+-rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 contents.txt
+-rw-rw-r-- 1 7vh 7vh    0 Dec  1 11:41 contents_time.txt
+contents_lh.txt (END)
 ```
-Indeed, we created this file to hold various incantation of the `ls` command, so printing them with `cat` 
-shows what we would see if we had entered those same command options on the command line instead.
+
+Indeed, we created this file to hold information from the `ls` command, so viewing with `less` 
+shows what we would see if we had entered that command and options on the command line instead.
 
 ### Move and rename a file with `mv`
 
@@ -303,10 +384,31 @@ The command `cp` is short for "copy". You can use it to copy individual files. I
 directory in the same location as the original, you must give it a new name or you will receive an
 error message. If you copy an item to a new location (by including the path in front of the name),
 then the name can be kept the same. Copying a file is simple: `cp [file] [new_file]` or 
-`cp [directory] [new_directory]`. 
+`cp [directory] [new_directory]`. Inside "new_directory", let's create a copy of the file
+"contents_l.txt". 
 
+```
+$ cd new_folder
+$ ls
+contents_l.txt  contents_lh.txt
+$ cp contents_l.txt contents_l_copy.txt
+$ ls
+contents_l.txt  contents_l_copy.txt  contents_lh.txt
+```
 
-In cases where you want to copy a directory AND it's contents 
+Viewing the copied file with `less` will reveal that its contents are identical.
+
+In cases where you want to copy a directory AND it's contents, use the "recursive" option, `-r`, to
+include everything inside. Use this to make a copy of the directory "new_folder" and all its contents.
+Be sure to use `cd` to move out of "new_folder" and back up to your home directory before this step.
+
+```
+$ cp -r new_folder other_folder 
+$ ls -l
+total 8
+drwxrwxr-x 3 7vh 7vh 4096 Dec 13 16:37 new_folder
+drwxrwxr-x 3 7vh 7vh 4096 Dec 29 10:06 other_folder
+```
 
 
 ### Delete a file with `rm` 
@@ -320,10 +422,8 @@ a `y` for yes, or `n` for no and press enter.
 Be careful what you type when using `rm`! 
 
 ```
+$ cd new_folder
 $ rm -i contents_l_copy.txt
-Including the long option prints out the contents of the directory in a table format where the columns
-indicate: object type and permissions, number of links to the object, object owner, object group, object
-size, date and time, and the objects name.
 rm: remove regular file 'contents_l_copy.txt'? n
 $ ls
 contents_l.txt contents_lh.txt
@@ -332,10 +432,160 @@ $ ls
 contents_lh.txt
 ```
 
-### Challenge
+## Finding, searching, and more information
 
-Put together what you have learned so far to acomplish the following task: create a new directory in 
-your home directory and in it create two files. Make one contain the output of `ls` where the contents
-two files. One should contain the output of the ls command
+### Locating files and directories
 
-Finish this part with a challenge that requires users to put together multiple commands theyve learned/
+The `find` command is a powerful tool for locating files and directories. It has options that  
+filter results based on name, location, size, date created or modified, permision status, and much more. 
+In general, the syntax for find is as follows: `find [path/paths] [expression]`, where "paths" are 
+the directory locations to search, and the expressions tell `find` how to filter results. We will focus 
+on a few basic examples.
+
+Entering `find` by itself will list all the files found in the current directory, as well as those in every
+directory in the hierarchy below it. 
+
+```
+$ find
+.
+./.pki
+./.pki/nssdb
+./.lsbatch
+./.ssh
+./.bash_history
+./.cache
+./new_folder
+./new_folder/contents_l.txt
+./new_folder/contents_lh.txt
+./new_folder/contents_l_copy.txt
+```
+> NOTE: Items in directories beginning with `.` are "hidden" files and directories that don't appear with a 
+> basic `ls`. These usually relate to settings and configurations for programs and commands, and what happens 
+> when you login. Although it is fine to look at the contents fo these files and directories, altering or
+> removing them is NOT recommended for beginners.
+
+If we provide the path to a directory, we will see only what is inside and recursively below that directory 
+instead.
+
+```
+$ find new_folder
+new_folder/
+new_folder/contents_l.txt
+new_folder/contents_lh.txt
+new_folder/contents_l_copy.txt
+```
+
+To search for a file by name, simply include the `-name` flag. To search for a directory by name, do the same 
+but also include the `-type d` flag and option.
+
+```
+$ find -name contents_lh.txt
+./new_folder/contents_lh.txt
+
+$ find -type d -name new_folder
+./new_folder
+```
+
+### Finding text within files
+
+If instead of finding a file by name, you wish to find some specific text within a file, you can use the
+`grep` command. The general syntax is `grep [options] [pattern] [file]`. Check the `man` page for grep to see
+the most common options. 
+
+From the home directory, let's use `grep` to search files for some pattern. In this example, let's search the
+following directory: `$HOME/foundational_hpc_skills/intro_to_unix/dir`.
+
+```
+$ cd $HOME/foundational_hpc_skills\intro_to_unix
+$ ls dir
+file1 file1a file1b file2 file2a file2b foo\
+```
+Inside is a st of files, and a directory containing more file. Each contains some text about the filename. 
+We can search `file1` for the word "file" like this:
+
+```
+$ grep "file" dir/file1
+This is file1
+```
+
+`grep` found the matching pattern in the file and printed the entire line that contained it. Suppose we want to
+search all the files in dir for a pattern starting with "file" and ending with the letter "a". We can use a 
+wildcard `*` in the directory to indicate that grep should search all the files in `dir`. However, we CANNOT use
+`*` in the pattern as grep does not recognize that character as representing any other character. In the pattern,
+use `.` instead like this:
+
+
+```
+$ grep "file.a" dir/*
+dir/file1a:This is file1a
+dir/file2a:This is file2a
+grep: dir/foo: Is a directory
+```
+
+`grep` found the pattern in two files and printed the lines from each, indicating the file name as well. However,
+`grep` did NOT search any files contained in the directory `foo\`. To do that, we must use the "recursive" option
+`-r` to tell it to search all files within all directories below the one given. 
+
+```
+$ grep -r "file.b" dir/
+dir/file1a:This is file1b
+dir/file2a:This is file2b
+dir/foo/file3a:This is file3b
+
+```
+
+### Identifying differences between files
+The `diff` command is used to find differences between files. The syntax as is follows: `diff [file1] [file2]`. As
+an example, we can look at the differences in two of the files references in the previous section. If the two files
+are identical, nothing will be printed.
+
+```
+$ cd dir
+$ diff file1a file2b
+1,2c1
+< This is file1a
+<
+---
+> This is file2b
+```
+
+The differing contents of the two files are separated by `---`, and the arrows are used to indicate which section
+corresponds to which file in order of how they were supplied in the command. Sometimes this format can be a little
+difficult to interpret while reading. Using the `-y` option will print the differences in the two files side by side
+in a columated format instead. 
+
+```
+$ diff file2a file1b -y
+This is file2a                                                | This is file1b
+```
+
+`diff` only works on two files at a time! Supplying the names of three files or more results in an error message. 
+
+```
+$ diff file1a file1b file2a
+diff: extra operand 'file2a'
+diff: Try 'diff --help' for more information.
+```
+
+## Challenge #1
+
+There are a series of files containing data about fictional users in the following directory: 
+`foundational_hpc_skills/intro_to_unix/challenge`
+
+Using whatever combination of commands seems right to you, identify the following:
+
+a) Find the name of a user who can play the banjo and has read The Count of Monte Cristo
+b) Find the name of a user who has read All Quiet on the Western Front and visited Belgium
+c) Find the name of a user who has visited Cameroon and can play the Accordian
+
+The search terms "information" and then the subsequent items that come up for each (ie: `book`), are a helpful place to 
+start. (Hint: the option in `grep` for case insensitivity may also help. See the man page to find it) 
+
+
+## Challenge #2
+
+a) Create some files to store the answers to the previous challenge, and store them all in a new directory. Name the files
+and directory whatever seems best to you. Create one additonal file that contains the result of `ls` command on the contents 
+of your new directory. Make sure the resulting file orders the `ls` output in reverse order of modification time. 
+(HINT: see the man page for `ls` to get the correct options).
+
