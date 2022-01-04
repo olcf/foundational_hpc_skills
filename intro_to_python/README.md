@@ -17,14 +17,16 @@ Part one of the basics will be done in interactive mode, while part two will be 
 
 Table of Contents:
 
-* [Line Syntax](#synt)
-* [Numbers and Variables](#nums)
-* [Strings and Slicing](#strs)
-* [Lists](#lists)
-* [Scripts](#scripts)
-* [Loops and Indentation](#loops)
-* [if-elif-else Statements](#ifs)
-* [Functions](#funcs)
+* The Basics - Part One
+	* [Line Syntax](#synt)
+	* [Numbers and Variables](#nums)
+	* [Strings and Slicing](#strs)
+	* [Lists](#lists)
+* The Basics - Part Two
+	* [Scripts](#scripts)
+	* [Loops and Indentation](#loops)
+	* [if-elif-else Statements](#ifs)
+	* [Functions](#funcs)
 * [Bonus Challenges](#challs)
 * [Additional Resources](#refs)
 
@@ -103,7 +105,7 @@ The `;` symbol is a shortcut for executing multiple statements on a single line,
 This can be useful for consecutive lines that are short and succinct, or for consecutive lines that may be related to each other.
 To the Python interpreter, the above example would just look like:
 
-```python
+```
 >>> print("I am on top")
 >>> print("I am on bottom")
 ```
