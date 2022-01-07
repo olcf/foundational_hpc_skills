@@ -4,7 +4,7 @@
     <img width="50%" src="images/python_logo.png">
 </p>
 
-Python is an interpreted, object-oriented, high-level programming language.
+[Python](https://www.python.org/) is an interpreted, object-oriented, high-level programming language.
 As opposed to a compiled language like Fortran and C, an interpreted language is a programming language which executes code without the need to previously compile a program into "machine-language".
 Since there is no compilation step, the testing and debugging cycle is quite fast.
 
@@ -783,7 +783,7 @@ if condition:
 ```
 
 <p align="center" width="100%">
-    <img width="50%" src="images/python_if.png">
+    <img width="30%" src="images/python_if.png">
 </p>
 
 As you can see, just like with loops, the body of an `if` statement is indented.
@@ -830,7 +830,7 @@ else:
 ```
 
 <p align="center" width="100%">
-    <img width="50%" src="images/python_if_else.png">
+    <img width="35%" src="images/python_if_else.png">
 </p>
 
 First, Python checks to see if the condition is "True".
