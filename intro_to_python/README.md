@@ -9,7 +9,7 @@ As opposed to a compiled language like Fortran and C, an interpreted language is
 Since there is no compilation step, the testing and debugging cycle is quite fast.
 
 Python has become one of the most popular programming languages in the world in recent years.
-Python's simple, easy to learn syntax emphasizes readability, so it is one of the "easier" languages to learn when beginning to code.
+Python's simple, easy to learn syntax emphasizes readability, so it is one of the "easier" languages to learn when beginning to program.
 It can be used for machine learning, website development, data science, task automation, and much more.
 In high-performance computing, Python is heavily used to analyze scientific data on the system.
 
@@ -23,7 +23,7 @@ Two of the most common ways to use Python are:
 1. Using an interactive session within your terminal
 2. Writing/Launching Python scripts (typically ".py" files)
 
-Part one of the basics will be done in interactive mode, while part two will be in scripting mode (as what is covered in the part two subsections are better suited in a scripting environment).
+Part one of the walkthrough will be done in interactive mode, while part two will be in scripting mode (as what is covered in the part two subsections are better suited in a scripting environment).
 
 Table of Contents:
 
