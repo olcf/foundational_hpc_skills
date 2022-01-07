@@ -1,12 +1,22 @@
 # Introduction to Python
 
-## What is Python?
+<p align="center" width="100%">
+    <img width="50%" src="images/python_logo.png">
+</p>
 
-Insert blurb about what Python is and why it's cool/useful, will come back to this last
+Python is an interpreted, object-oriented, high-level programming language.
+As opposed to a compiled language like Fortran and C, an interpreted language is a programming language which executes code without the need to previously compile a program into "machine-language".
+Since there is no compilation step, the testing and debugging cycle is quite fast.
 
-Before getting started, make sure that you have a fresh Unix terminal open.
+Python has become one of the most popular programming languages in the world in recent years.
+Python's simple, easy to learn syntax emphasizes readability, so it is one of the "easier" languages to learn when beginning to code.
+It can be used for machine learning, website development, data science, task automation, and much more.
+In high-performance computing, Python is heavily used to analyze scientific data on the system.
 
-We will specifically be using Python3 in this guide.
+The walkthrough presented in this repository is meant to give you experience with some of the basic foundation of the Python language.
+There is much more to Python than what is included in this guide, but what is provided will hopefully set you on the right path.
+We will specifically be using "Python 3" syntax in this guide (as opposed to "Python 2").
+For additional help and topics, be sure to check out the [Additional Resources](#refs) section.
 
 Two of the most common ways to use Python are:
 
@@ -37,6 +47,15 @@ This will allow you to see output in real-time and let you fix things dynamicall
 Unless otherwise stated below a specific example, it is encouraged to follow along in your own interactive Python session through this part of the walkthrough.
 
 ### <a name="synt"></a>1. Line Syntax
+
+Before getting started, make sure that you have a fresh Unix terminal open.
+Once you have a terminal open, change directories to the `intro_to_python` directory:
+
+```
+$ cd ~/foundational_hpc_skills/intro_to_python
+```
+
+> Note: The above syntax is assuming you stored the `foundational_hpc_skills` repository in your Home directory.
 
 To get started, all you have to do is launch an interactive Python shell by typing "python3" in your terminal:
 
@@ -127,7 +146,7 @@ Comments are hidden
 
 Comments are used heavily throughout this guide and, other than the above example, you do not have to type in the comments yourself while you go through the examples -- they are mainly there for you to read.
 
-> Note: As you will see when we discuss scripting (insert section here), you can enclose multiple lines in a pair of `'''` or `"""` (three single quotes or three double quotes) to comment out entire blocks of lines.
+> Note: As you will see when we discuss scripting (see [Scripts](#scripts) section), you can enclose multiple lines in a pair of `'''` or `"""` (three single quotes or three double quotes) to comment out entire blocks of lines.
 
 Now that we have covered the some of the basic syntax, let's dig deeper and show off what Python can do with numbers.
 
@@ -489,7 +508,13 @@ Everything else we discussed previously goes unchanged, yay!
 To run Python scripts using Python 3, it's as simple as executing `python3 file.py`, but first we need to create a file.
 Although most of the scripts in this section are pre-made, it is a good exercise to make your own first.
 A blank template file called `first_script.py` is included in this repository for you to fill out.
-By now you will have covered the VIM challenge [insert link to VIM challenge here], so you can use VIM or your favorite text editor to open the file `first_script.py`.
+By now you will have covered the Vim challenge in the HPC foundations repository ([Intro to Vim](../intro_to_vim)), so you can use VIM or your favorite text editor to open the file `first_script.py`.
+For example:
+
+```
+$ cd ~/foundational_hpc_skills/intro_to_python
+$ vi first_script.py
+```
 
 Once you have opened this file, it's time to fill it with some code.
 Entering code into a Python file works just like entering it into the interactive shell, just without the `>>>`.
@@ -540,6 +565,12 @@ Now that you know how to launch a Python script, let's cover the remaining topic
 > Note: The topics and techniques below can still be used in interactive mode, but are better suited in a scripting environment.
 
 ### <a name="loops"></a>6. Loops and Indentation
+
+For this section you need to be in the `loops` directory:
+
+```
+$ cd ~/foundational_hpc_skills/intro_to_python/loops
+```
 
 One of the most common and fun things to do in Python is to write loops of code.
 Loops make Python iterate over a certain section of code (usually over a list or a set of numbers).
@@ -736,6 +767,12 @@ Now that we've introduced conditions being either "True" or "False" in the conte
 
 ### <a name="ifs"></a>7. if-elif-else Statements
 
+For this section you need to be in the `if_elif_else` directory:
+
+```
+$ cd ~/foundational_hpc_skills/intro_to_python/if_elif_else
+```
+
 If you want to execute a piece of code only if a specific condition is met, the `if` statement comes in handy.
 For example, maybe you only want to print something out if a specific variable is "True", or when a math expression yields a specific value.
 No matter the reason, the syntax of the `if` statement is:
@@ -745,12 +782,14 @@ if condition:
     body of if statement
 ```
 
+<p align="center" width="100%">
+    <img width="50%" src="images/python_if.png">
+</p>
+
 As you can see, just like with loops, the body of an `if` statement is indented.
 In the example above, Python first evaluates `condition` to determine whether it is "True" or "False".
 Next, Python executes the body of the statement only if `condition` is "True".
 In actual English, you can think of the line `if condition:` as meaning: "If this line is True, Python will do the following:".
-
-INSERT PICTURE HERE
 
 Let's see two simple `if` statement examples in `if.py`:
 
@@ -776,7 +815,7 @@ $ python3 if.py
 x is 1
 ```
 
-Recall from INSERT SECTION HERE that the `==` operator checks if two things are equal.
+Recall from [Loops and Indentation](#loops) that the `==` operator checks if two things are equal.
 In Example 1, `x` did indeed equal 1, so the condition was "True" and Python executed the `print` function in the first `if` statement.
 In Example 2, `x` did **NOT** equal 2, so the condition was "False" and Python did not execute the `if` statement.
 Because we did not tell Python what to do if the condition was "False", Python did nothing and skipped over it.
@@ -790,11 +829,13 @@ else:
     body of else statement   # Do this if the condition is False
 ```
 
+<p align="center" width="100%">
+    <img width="50%" src="images/python_if_else.png">
+</p>
+
 First, Python checks to see if the condition is "True".
 If the condition is "True", then Python executes the body of the `if` statement and ignores the body of the `else` statement.
 However, if Python found that the condition was "False", it would execute the body of the `else` statement instead.
-
-INSERT PICTURE HERE
 
 > Note: For more advanced users, instead of using an `else` statement for "False" conditions, you could also use the `not` operator and play around with statements like `if not condition:`
 
@@ -836,6 +877,10 @@ else:
     body of else statement  # Do this if both conditions are False
 ```
 
+<p align="center" width="100%">
+    <img width="50%" src="images/python_if_elif_else.png">
+</p>
+
 First, Python checks to see if `condition_one` is "True".
 If it finds that `condition_one` is "True", then Python will execute the body of the `if` statement and skip the rest (regardless of the remaining conditions).
 However, if it finds that `condition_one` is "False", then Python then checks to see if `condition_two` is "True".
@@ -844,8 +889,6 @@ And, if all conditions are "False", then Python will execute the `else` statemen
 
 Because Python skips the remaining `if-elif-else` code once it finds a "True" condition, only **ONE** of the statements will be executed across an entire `if-elif-else` section of code.
 Even if multiple statements are "True", it will only execute whichever one it finds first, starting from the top.
-
-[INSERT PICTURE HERE]
 
 We only used one `elif` line in the above syntax example, but you can include as many `elif` statements as you like.
 However, note that you can only ever have one `if` and `else` line in a given `if-elif-else` block of code.
@@ -886,6 +929,12 @@ Code like that can be tricky to wrap your head around, but the technique can be 
 We are now approaching the final foundation block in Python coding -- functions.
 
 ### <a name="funcs"></a>8. Functions
+
+For this section you need to be in the `functions` directory:
+
+```
+$ cd ~/foundational_hpc_skills/intro_to_python/functions
+```
 
 So far we have covered writing sections of Python code that we did not have to re-use or need more than once.
 But what if you want to re-use code without copy pasting or typing it over and over and duplicating code; this is where functions come in to play.
@@ -1005,18 +1054,18 @@ Don't be afraid to ask questions for anything covered in this guide -- we are he
 
 ## <a name="challs"></a>Bonus Challenges
 
-To access the challenges, you must change directories to the relevant directory:
+To access the challenges, you must change directories to the `challenges` directory:
 
 ```
-$ cd ~/intro_to_python/challenges
+$ cd ~/foundational_hpc_skills/intro_to_python/challenges
 ```
 
-> Note: The above `cd` syntax assumes you have stored the repository in your home directory.
+> Note: The above syntax is assuming you stored the `foundational_hpc_skills` repository in your Home directory.
 
 If you are having trouble completing the challenges, potential solutions are provided in the `solutions` sub-directory.
 
 ```
-$ cd ~/intro_to_python/challenges/solutions
+$ cd ~/foundational_hpc_skills/intro_to_python/challenges/solutions
 ```
 
 Although the above walkthrough was the main "challenge", the bonus challenges provide some more hands-on experience with the topics that we covered above.
