@@ -1077,6 +1077,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 
 * "Slicing the cake" `cake.py` [Easy]:
 
+    **Relevant sections:** [Lists](#lists)
+    
     Who doesn't love slicing some cake?
     The objective of this challenge is to match two lists (`test_cake` and `fake_cake`) by slicing `real_cake`.
     Your mission is to edit the line labeled as "TO-DO" to get the script to work properly.
@@ -1108,6 +1110,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 
 * "Calculating the box" `box.py` [Easy]:
 
+    **Relevant sections:** [Numbers and Variables](#nums), [Lists](#lists), [Functions](#funcs)
+    
     Who doesn't love math and boxes?
     The objective of this challenge is to fill in the missing information of the  `get_size` function to calculate the area and volume of a box and then return the results in the form of a list `[area, volume]`.
     You will need to edit both the body of the function and the `return` line of the function, which are both marked by "TO-DO" comments.
@@ -1148,6 +1152,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 
 * "Playing the banjo" `banjo.py` [Medium]:
 
+    **Relevant sections:** [Strings](#strs), [if-elif-else Statements](#ifs), [Functions](#funcs)
+    
     Who doesn't love the banjo?
     The objective of this challenge is to fill in the missing information of the  `playing_banjo` function to figure out if someone knows how to play the banjo or not.
     More specifically, you want the function to `print` either `NAME plays the banjo` or `NAME does not play the banjo` based on a person's name.
@@ -1194,6 +1200,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 
 * "Counting the sheep" `sheep.py` [Medium]:
 
+    **Relevant sections:** [Lists](#lists), [Loops](#loops), [Functions](#funcs)
+    
     Who doesn't love sheep?
     The objective of this challenge is to fill in the missing information of the  `count_sheeps` function to count the number of "True" entries in a list.
     Each "True" entry in the list represents one single sheep in this universe.
@@ -1240,6 +1248,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 
 * "Finding the needle" `needle.py` [Hard]:
 
+    **Relevant sections:** [Loops](#loops), [if-elif-else Statements](#ifs), [Functions](#funcs)
+    
     Who doesn't love needles in haystacks?
     The objective of this challenge is to fill in the missing information of the  `find_needle` function so that it returns the position of "needle" in a given list.
     You will need to edit the body of the loop in the function and the `return` line of the function (both marked by "TO-DO" comments).
