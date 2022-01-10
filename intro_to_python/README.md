@@ -23,7 +23,7 @@ Two of the most common ways to use Python are:
 1. Using an interactive session within your terminal
 2. Writing/Launching Python scripts (typically ".py" files)
 
-Part one of the walkthrough will be done in interactive mode, while part two will be in scripting mode (as what is covered in the part two subsections are better suited in a scripting environment).
+Part one of the walkthrough will be in interactive mode, while part two will be in scripting mode (as what is covered in the part two subsections are better suited in a scripting environment).
 
 Table of Contents:
 
@@ -70,7 +70,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 > Note: If for some reason you need to quit early in this walkthrough, type `quit()` and then press Enter/Return while in your interactive Python shell
 
-The ">>>" symbol is the prompt of the interactive Python interpreter, meaning that the interpreter is ready for Python code to be typed in.
+The `>>>` symbol is the prompt of the interactive Python interpreter, meaning that the interpreter is ready for Python code to be typed in.
 Anything you type in, until you exit your interactive shell, will be executed with Python.
 The code will be executed on a line-by-line basis, and a line will be executed after pressing Enter/Return.
 To end a statement in Python, you do not have to type in a semicolon or other special character, you just need to press Enter/Return.
@@ -84,7 +84,7 @@ Hello!
 ```
 
 Congratulations, you just used Python for the first time in this walkthrough!
-As it has finished printing out "Hello!", the interactive prompt is now displaying ">>>" again and waiting for you to tell it what to do next.
+As it has finished printing out "Hello!", the interactive prompt is now displaying `>>>` again and waiting for you to tell it what to do next.
 Let's use the `print` function again to print out multiple things at once that are side-by-side:
 
 ```
@@ -93,7 +93,7 @@ I am on the left! I am on the right!
 >>>
 ```
 
-Under certain circumstances, your lines may begin with "..." (called "continuation lines"), indicating that the interpreter has not run anything yet and is waiting for you to input something else or "finish" the line.
+Under certain circumstances, your lines may begin with `...` (called "continuation lines"), indicating that the interpreter has not run anything yet and is waiting for you to input something else or "finish" the line.
 To see this, we can explicitly span a single Python statement across multiple lines by using the `\` symbol at the end of a line.
 Let's do this by modifying our above `print` statement example:
 
@@ -107,7 +107,7 @@ I am on the left! I am on the right!
 Even though we split the single statement across multiple lines, Python still ran the code as if it were all on the same line.
 Therefore, you can think of the `\` symbol as just extending any given line.
 Using `\` can be helpful if you are typing a lot of code on a single line and would like to make it more "human-readable" in a text editor for example.
-The reason why you see "..." is because the interpreter waited for you to tell it what to do next.
+The reason why you see `...` is because the interpreter waited for you to tell it what to do next.
 In this case, it was waiting for you to "finish" the `print` function by submitting the final closing `)`.
 
 Now that you've seen how to split a single Python statement across multiple lines, let's try to combine multiple statements into a single line.
@@ -148,7 +148,7 @@ Comments are used heavily throughout this guide and, other than the above exampl
 
 > Note: As you will see when we discuss scripting (see [Scripts](#scripts) section), you can enclose multiple lines in a pair of `'''` or `"""` (three single quotes or three double quotes) to comment out entire blocks of lines.
 
-Now that we have covered the some of the basic syntax, let's dig deeper and show off what Python can do with numbers.
+Now that we have covered some of the basic syntax, let's dig deeper and show off what Python can do with numbers.
 
 ### <a name="nums"></a>2. Numbers and Variables
 
@@ -255,7 +255,7 @@ This comes in handy when you are using Python as a quick calculator, for example
 ```
 
 This variable should be treated as read-only by the user.
-Do not try to explicitly assign a value to `_`, for you would create an independent local variable with the same name that would override the built-in variable with its "magic" behavior.
+Do **NOT** try to explicitly assign a value to `_`, because you would create an independent local variable with the same name that would override the built-in variable with its "magic" behavior.
 
 Let's continue the Python "magic" by moving on to strings!
 
@@ -301,7 +301,7 @@ For a more advanced approach, you can explicitly "escape" the error messages see
 ```
 
 Similar to numbers, strings also can be manipulated using the `+` and `*` operators.
-More specifically, the `+` operator combines (or concatenates) two strings, while the `*` operator can be used to repeat a string if used with a number:
+More specifically, the `+` operator combines two strings, while the `*` operator can be used to repeat a string if used with a number:
 
 ```python
 >>> "gg" + "ez"              # combining two strings using +
@@ -330,7 +330,7 @@ SyntaxError: invalid syntax
 ```
 
 As you will see with lists further below, one cool thing about strings is that you can "slice" them to extract specific portions of the string.
-Slicing is heavily used throughout Python code, especially in data analysis, data mining, plotting, sorting, and much more.
+Slicing is heavily used in Python programming, especially when analyzing data, plotting, and sorting.
 "Indexing" is a subset of slicing that only extracts one character from a string, while "slicing" can extract multiple characters at once (i.e., multiple indices).
 
 As is the convention with most of Python, indexing starts at 0 instead of 1, which can be confusing at times (especially for those transitioning from Fortran).
@@ -482,7 +482,7 @@ As you will see further below, we will be utilizing lists a fair amount later in
 
 This concludes the first half of the basics walkthrough -- the "interactive shell" portion.
 Although what's covered below is also considered part of "the basics," the topics below are better suited in a scripting environment.
-Hence, we will be transitioning out of the Python interactive shell we have been using into writing and running Python scripts instead.
+Hence, we will be transitioning out of the Python interactive shell into writing and running Python scripts instead.
 
 Recall, to quit interactive mode and return to your terminal, use the `quit()` function:
 
@@ -604,7 +604,7 @@ for i in loop_list:
     print(i)
 ```
 
-The goal in `for_loop_list.py` is to print out each entry of the list one after the other.
+The goal in `for_loop_list.py` is to print out each entry of the list in succession.
 A list `loop_list` is created first, which acts as the "sequence" in this scenario (the object that is being iterated over).
 The variable `i` will act as the value of the item inside the sequence on each iteration -- in this case, each entry in `loop_list`.
 The loop will first start at "cat" then move on to "dog", "hamster", and "bird" in succession.
@@ -1158,7 +1158,8 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
     The objective of this challenge is to fill in the missing information of the  `playing_banjo` function to figure out if someone knows how to play the banjo or not.
     More specifically, you want the function to `print` either `NAME plays the banjo` or `NAME does not play the banjo` based on a person's name.
     In this code-world, only names that begin with the letter "R" (lower case or upper case) know how to play the banjo.
-    You will need to edit the `if` and `elif` statements in the body of the function to make sure things print out correctly (the `else` statement is already correctly filled in).
+    You will need to edit the `if` and `elif` statements in the body of the function to make sure things print out correctly (marked by the "TO-DO" comments).
+    Note that the `else` statement is already correctly filled in.
     After editing the script, run it to see if you correctly fixed things.
     If you are successful, you will see this output:
     
