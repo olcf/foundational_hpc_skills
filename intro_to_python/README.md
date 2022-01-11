@@ -296,8 +296,8 @@ SyntaxError: invalid syntax
 For a more advanced approach, you can explicitly "escape" the error messages seen above by using either `\'` or `\"` in problematic areas:
 
 ```python
->>> error_1 = 'You\'re cool'           # use \ symbol to escape ' (fixes error)
->>> error_2 = " No \"i\" in \"Team\" " # use \ symbol to escape " (fixes error) 
+>>> error_1_fix = 'You\'re cool'           # use \ symbol to escape ' (fixes error)
+>>> error_2_fix = " No \"i\" in \"Team\" " # use \ symbol to escape " (fixes error) 
 ```
 
 Similar to numbers, strings also can be manipulated using the `+` and `*` operators.
@@ -631,7 +631,7 @@ To see some examples, let's inspect the script `for_loop_range.py`:
 
 
 # iterate from 0 through 10 (exclude 10) in steps of 1
-print( 'Example 1: range(0,10,1)' )
+print( 'Example 6.1: range(0,10,1)' )
 
 for i in range(0,10,1):
     print(i)
@@ -639,7 +639,7 @@ for i in range(0,10,1):
 
 # iterate from 0 through 10 (exclude 10) in steps of 2
 print(' ')
-print( 'Example 2: range(0,10,2)' )
+print( 'Example 6.2: range(0,10,2)' )
 
 for i in range(0,10,2):
     print(i)
@@ -647,7 +647,7 @@ for i in range(0,10,2):
 
 # if only supplying one number, it will iterate up to that number
 print(' ')
-print( 'Example 3: range(4)' )
+print( 'Example 6.3: range(4)' )
 
 for i in range(4):
     print(i)
@@ -655,7 +655,7 @@ for i in range(4):
 
 # iterate over a list using its length and indexing
 print(' ')
-print( 'Example 4: range(length_x)' )
+print( 'Example 6.4: range(length_x)' )
 
 x = ['O','L','C','F']
 length_x = len(x)
@@ -667,7 +667,7 @@ Running `for_loop_range.py` will show you the output:
 
 ```
 $ python3 for_loop_range.py 
-Example 1: range(0,10,1)
+Example 6.1: range(0,10,1)
 0
 1
 2
@@ -679,20 +679,20 @@ Example 1: range(0,10,1)
 8
 9
  
-Example 2: range(0,10,2)
+Example 6.2: range(0,10,2)
 0
 2
 4
 6
 8
  
-Example 3: range(4)
+Example 6.3: range(4)
 0
 1
 2
 3
  
-Example 4: range(length_x)
+Example 6.4: range(length_x)
 O
 L
 C
@@ -719,7 +719,7 @@ To see some examples, let's inspect the script `while_loops.py`:
 
 
 # iterate only while "a" is less than "b"
-print('Example 1: while a<b')
+print('Example 6.5: while a<b')
 
 a = 0 
 b = 5 
@@ -729,7 +729,7 @@ while a<b:
 
 # iterate until "c" equals 6
 print(' ')
-print('Example 2: while c!=6')
+print('Example 6.6: while c!=6')
 
 c = 0 
 while c!=6:
@@ -741,14 +741,14 @@ Running `while_loops.py` will show you the output:
 
 ```
 $ python3 while_loops.py
-Example 1: while a<b
+Example 6.5: while a<b
 a equals 0
 a equals 1
 a equals 2
 a equals 3
 a equals 4
  
-Example 2: while c!=6
+Example 6.6: while c!=6
 Am I 6 yet? Nope, I am 0
 Am I 6 yet? Nope, I am 1
 Am I 6 yet? Nope, I am 2
@@ -799,11 +799,11 @@ Let's see two simple `if` statement examples in `if.py`:
 # initialize a variable "x"
 x = 1 
 
-# Example 1: check to see if "x" is equal to 1
+# Example 7.1: check to see if "x" is equal to 1
 if x==1 :
     print('x is 1')
 
-# Example 2: check to see if "x" is equal to 2
+# Example 7.2: check to see if "x" is equal to 2
 if x==2 :
     print('x is 2')
 ```
@@ -816,8 +816,8 @@ x is 1
 ```
 
 Recall from [Loops and Indentation](#loops) that the `==` operator checks if two things are equal.
-In Example 1, `x` did indeed equal 1, so the condition was "True" and Python executed the `print` function in the first `if` statement.
-In Example 2, `x` did **NOT** equal 2, so the condition was "False" and Python did not execute the `if` statement.
+In Example 7.1, `x` did indeed equal 1, so the condition was "True" and Python executed the `print` function in the first `if` statement.
+In Example 7.2, `x` did **NOT** equal 2, so the condition was "False" and Python did not execute the `if` statement.
 Because we did not tell Python what to do if the condition was "False", Python did nothing and skipped over it.
 
 To explicitly tell Python what to do in the event that the condition is "False", you need to add an `else` statement:
@@ -1023,19 +1023,19 @@ def sum_var(x,y):
 
     return z
 
-# Example 1: execute the function without saving the result
+# Example 8.1: execute the function without saving the result
 sum_var(3,5)
 
-# Example 2: execute the function while saving result to a variable
+# Example 8.2: execute the function while saving result to a variable
 test = sum_var(3,5)
 print(test)
 ```
 
 The function `sum_var` was written exactly like the previously discussed `sum_print` function, but with the key difference being `return z` instead of `return print(z)`.
-Because of this, calling the function `sum_var` by itself doesn't automatically print out the value of `z` -- as seen in "Example 1" in the above script.
+Because of this, calling the function `sum_var` by itself doesn't automatically print out the value of `z` -- as seen in "Example 8.1" in the above script.
 This is because that the function was told only to return a variable upon exit, not actually use the variable in a specific way.
 
-In "Example 2", we save the resulting variable of the function to a new variable called `test`.
+In "Example 8.2", we save the resulting variable of the function to a new variable called `test`.
 This allows Python to access the `z` result of the function through `test`, which - upon printing - we see that the result of the function is 8, just like before.
 
 ```
@@ -1045,10 +1045,14 @@ $ python3 func_var.py
 
 Saving a function's result to a variable is helpful for when you may need the result at a later time in your code.
 
-> Note: Alternatively, you could do `print( sum_var(3,5) )` to accomplish the same task in "Example 2" without having to set a new variable.
+> Note: Alternatively, you could do `print( sum_var(3,5) )` to accomplish the same task in "Example 8.2" without having to set a new variable.
 
 It was a long and bumpy ride (especially those last two sections), but you finally reached the end of the walkthrough.
 Congratulations!
+We did not cover everything there is to know about Python (there is a lot!), but you should now have some basic foundation in Python programming.
+One of my favorite topics we did not cover is "user input", where Python prompts the user to type in things as the code is running -- this can be used to quickly test different values for the same variable in a program, for instance, without having to manually change the code in the program itself.
+A short tutorial covering this functionality can be found here: [GeeksforGeeks Tutorial](https://www.geeksforgeeks.org/python-3-input-function/)
+
 This concludes all that you need to know before attempting the bonus challenges below.
 Don't be afraid to ask questions for anything covered in this guide -- we are here to help!
 
@@ -1106,6 +1110,7 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 	    print('Success!')
 	else:
 	    print('Try again!')
+	    print('Fake cake should equal test cake')
 	```
 
 * "Calculating the box" `box.py` [Easy]:
@@ -1148,6 +1153,7 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 	    print('Success!')
 	else:
 	    print('Try again!')
+	    print('You should get [6,1] and [88,48]')
 	```
 
 * "Playing the banjo" `banjo.py` [Medium]:
@@ -1241,10 +1247,13 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 	flock_count = count_sheeps(flock)
 	
 	# Check to see if you are correct
+	print("You counted this many sheep: ", flock_count)
+	
 	if flock_count == 17: 
-	    print("There are 17 sheeps! Success!")
+	    print("There are 17 sheep! Success!")
 	else:
 	    print("Try again!")
+	    print("The sheep count should be 17")
 	```
 
 * "Finding the needle" `needle.py` [Hard]:
@@ -1298,6 +1307,7 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 	    print('Success!')
 	else:
 	    print('Try again!')
+	    print('You should find them at position 5 and position 1')
 	```
    
  

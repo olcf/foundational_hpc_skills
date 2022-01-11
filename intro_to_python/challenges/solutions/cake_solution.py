@@ -16,3 +16,4 @@ if test_cake == fake_cake:
     print('Success!')
 else:
     print('Try again!')
+    print('Fake cake should equal test cake')

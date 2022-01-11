@@ -2,7 +2,7 @@
 
 
 # iterate only while "a" is less than "b"
-print('Example 1: while a<b')
+print('Example 6.5: while a<b')
 
 a = 0 
 b = 5
@@ -12,7 +12,7 @@ while a<b:
 
 # iterate until "c" equals 6
 print(' ')
-print('Example 2: while c!=6')
+print('Example 6.6: while c!=6')
 
 c = 0
 while c!=6:

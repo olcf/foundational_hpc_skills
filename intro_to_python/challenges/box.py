@@ -25,4 +25,4 @@ if (box_1 == [6,1]) and (box_2 == [88,48]):
     print('Success!')
 else:
     print('Try again!')
-
+    print('You should get [6,1] and [88,48]')

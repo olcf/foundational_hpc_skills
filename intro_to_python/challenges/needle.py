@@ -35,4 +35,4 @@ if (needle_pos_1 == 5) and (needle_pos_2 == 1):
     print('Success!')
 else:
     print('Try again!')
-
+    print('You should find them at position 5 and position 1')

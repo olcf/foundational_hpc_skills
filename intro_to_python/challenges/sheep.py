@@ -26,7 +26,10 @@ flock = [True,  True,  True,  False, \
 flock_count = count_sheeps(flock)
 
 # Check to see if you are correct
+print("You counted this many sheep: ", flock_count)
+
 if flock_count == 17:
-    print("There are 17 sheeps! Success!")
+    print("There are 17 sheep! Success!")
 else:
     print("Try again!")
+    print("The sheep count should be 17")

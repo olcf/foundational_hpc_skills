@@ -2,7 +2,7 @@
 
 
 # iterate from 0 through 10 (exclude 10) in steps of 1
-print( 'Example 1: range(0,10,1)' )
+print( 'Example 6.1: range(0,10,1)' )
 
 for i in range(0,10,1):
     print(i)
@@ -10,7 +10,7 @@ for i in range(0,10,1):
 
 # iterate from 0 through 10 (exclude 10) in steps of 2
 print(' ')
-print( 'Example 2: range(0,10,2)' )
+print( 'Example 6.2: range(0,10,2)' )
 
 for i in range(0,10,2):
     print(i)
@@ -18,7 +18,7 @@ for i in range(0,10,2):
 
 # if only supplying one number, it will iterate up to that number
 print(' ')
-print( 'Example 3: range(4)' )
+print( 'Example 6.3: range(4)' )
 
 for i in range(4):
     print(i)
@@ -26,7 +26,7 @@ for i in range(4):
 
 # iterate over a list using its length and indexing
 print(' ')
-print( 'Example 4: range(length_x)' )
+print( 'Example 6.4: range(length_x)' )
 
 x = ['O','L','C','F']
 length_x = len(x)
