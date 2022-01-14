@@ -37,6 +37,7 @@ Table of Contents:
 	* [Loops and Indentation](#loops)
 	* [if-elif-else Statements](#ifs)
 	* [Functions](#funcs)
+* [Closing Remarks](#close)
 * [Bonus Challenges](#challs)
 * [Additional Resources](#refs)
 
@@ -140,8 +141,8 @@ For example, consider the following code:
 >>> # this is a comment
 >>> print("Comments are hidden") # this is also a comment
 Comments are hidden
->>> print(" # this is not a comment because enclosed")
- # this is not a comment because enclosed
+>>> print(" # this is not a comment because enclosed in quotes")
+ # this is not a comment because enclosed in quotes
 ```
 
 Comments are used heavily throughout this guide and, other than the above example, you do not have to type in the comments yourself while you go through the examples -- they are mainly there for you to read.
@@ -1046,6 +1047,8 @@ $ python3 func_var.py
 Saving a function's result to a variable is helpful for when you may need the result at a later time in your code.
 
 > Note: Alternatively, you could do `print( sum_var(3,5) )` to accomplish the same task in "Example 8.2" without having to set a new variable.
+
+## <a name="close"></a>Closing Remarks
 
 It was a long and bumpy ride (especially those last two sections), but you finally reached the end of the walkthrough.
 Congratulations!
