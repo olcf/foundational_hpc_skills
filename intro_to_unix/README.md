@@ -17,10 +17,10 @@ challenges ahead.
 
 ## The Command Line
 
-The command line is a text interface for a computer. It is the place in which you type the commands 
-that will be interpreted and executed by the computer when you enter them. From the command line, 
-you can run programs and navigate through files and folders just like you would with Windows 
-Explorer on Windows or Finder on MacOS. 
+The command line (also called a command prompt) is a text interface for a computer. It is the place 
+in which you type the commands that will be interpreted and executed by the computer when you enter 
+them. From the command line, you can run programs and navigate through files and folders just like 
+you would with Windows Explorer on Windows or Finder on MacOS. 
 
 For example, the Windows folder in a Windows command line is `C:\Windows>`. In Unix or Linux, it 
 may be `%` or `>`. In our instance it is `$`. The `$` is preceeded by information about who you are
@@ -28,7 +28,7 @@ may be `%` or `>`. In our instance it is `$`. The `$` is preceeded by informatio
 interactions with the computers filesystems), and the name of the directory (file, `~` is "home") 
 you are currently located in. 
 
-In front of your cursor, that information that represents the command line will look like this:
+On Ascent, the information that represents the command line will look like this:
 
 ```
 [your_id@login1.ascent ~]$
@@ -124,6 +124,24 @@ file1a  file2a  file3a
 You can think of directories as being like folders on a personal Windows or Mac computer. They are 
 containers for files and other directories, and form the basis for the filesystem you can move
 around in. 
+
+### Special Directories
+
+Every directory contains two special directory entries: ”.” and “..”. These are normally "hidden" when
+you list the contents of a directory. 
+
+`.` is a reference to the current directory. Sometimes, especially when wanting to execute (or run) a 
+program or piece of code, you will see the location to the file referenced as `./my_program.exe`.
+This is telling the code to look for the file "here in the current directory."
+
+`..` is a reference to the "parent" directory, or the one "above" the one where you are located. This
+winds up being important when you want to move up to a higher location in the filesystem.
+
+`~` is usually a reference to a users "home" directory. If you see this in the path to a file, such as
+`~/my_directory/my_program.exe`, this would indicate to start looking in the home directory location.
+
+These will become more apparent later on in this exercise and in later challenges.
+
 
 ### Locating yourself with the `pwd` command
 
@@ -227,11 +245,6 @@ Including the long option prints out the contents of the directory in a table fo
 indicate: object type and permissions, number of links to the object, object owner, object group, object
 size, date and time, and the objects name.
 
-<br>
-<center>
-<img src="images/UnixPermissions.gif" style="width:80%">
-</center>
-<br>
 
 Take a look at the `man` page for `ls` and try reading through all the options.  
 Here is a table of some of the most frequently used options for the `ls` command. If you want more 
@@ -340,13 +353,67 @@ $ less contents_lh.txt
 
 total 8.0K
 drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
--rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 contents.txt
--rw-rw-r-- 1 7vh 7vh    0 Dec  1 11:41 contents_time.txt
+-rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 content_l.txt
+-rw-rw-r-- 1 7vh 7vh    0 Dec  1 11:41 contents_lh.txt
 contents_lh.txt (END)
 ```
 
 Indeed, we created this file to hold information from the `ls` command, so viewing with `less` 
 shows what we would see if we had entered that command and options on the command line instead.
+
+### View, create, and add to files with `cat`
+
+`cat`, short for "concatenate", is another way to create and view a file. Additionally, `cat` can also
+be used to *combine* the output of already existing files. Unlike `less`, if you view a file with `cat`, 
+it prints the contents directly in your terminal window as opposed to "opening" the file in a separate
+viewing mode. 
+
+To view a file, provide a single file name after the command. Try viewing the same file we looked at 
+previously with `less`:
+
+```
+$ cat contents_lh.txt
+total 8.0K
+drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
+-rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 content_l.txt
+-rw-rw-r-- 1 7vh 7vh    0 Dec  1 11:41 contents_lh.txt
+```
+
+Try entering the names of two files to see what happens:
+
+```
+$ cat contents_l.txt contents_lh.txt
+total 4.0K
+-rw-rw-r-- 1 7vh 7vh    0 Nov 30 15:38 content_l.txt
+drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
+total 8.0K
+drwxrwxr-x 2 7vh 7vh 4.0K Nov 23 11:09 new_folder
+-rw-rw-r-- 1 7vh 7vh  109 Nov 30 15:38 content_l.txt
+-rw-rw-r-- 1 7vh 7vh    0 Dec  1 11:41 contents_lh.txt
+```
+We can use `cat` and the `>` from before to create a new file. Simply type:
+
+
+If you want combined output to be written to a new file, use the `>` as before:
+
+```
+$ cat content_l.txt contents_lh.txt > combined.txt
+```
+If you want to combine files by adding the contents of one to another without creating a whole new file or 
+seeing their contents printed to the command line, use two `>>`:
+
+```
+$ cat content_l.txt >> combined.txt
+```
+Trying viewing "combined.txt" with either command to see the result. 
+
+Lastly, you can create a whole new file with `cat` and `>` by typing the name of a whole new file name after 
+the `>` with no space. This creates a blank line where the prompt normally is to type the text you would
+like to enter into the file. Once done typing, press crtl-D to finish. 
+
+```
+$ cat >new_cat_file.txt
+```
 
 ### Move and rename a file with `mv`
 
@@ -579,7 +646,8 @@ b) Find the name of a user who has read All Quiet on the Western Front and visit
 c) Find the name of a user who has visited Cameroon and can play the Accordian
 
 The search terms "information" and then the subsequent items that come up for each (ie: `book`), are a helpful place to 
-start. (Hint: the option in `grep` for case insensitivity may also help. See the man page to find it) 
+start. (Hint: the option in `grep` for case insensitivity may also help. See the man page to find it). You could also
+opt to simply view all the files instead of searching them, though this would take more time.
 
 
 ## Challenge #2
