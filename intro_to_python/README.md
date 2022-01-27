@@ -164,7 +164,7 @@ Python behaves similarly to other languages when performing arithmetic, using th
 >>> 2 * 3        # multiplication
 6
 >>> 10 / 5       # division
-2
+2.0
 >>> 3 ** 2       # exponents/powers (e.g., 3 to the power of 2)
 9
 >>> (1 + 2) * 4  # parentheses have priority
