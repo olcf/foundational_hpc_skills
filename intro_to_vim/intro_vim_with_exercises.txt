@@ -73,7 +73,7 @@ EXERCISE SET #1
 Visual Mode (for highlighting text)
 ===
 
-	<ESC>V - Visual mode
+	<ESC>v - Visual mode
 
 Copy/Cut/Paste
 ===
@@ -87,7 +87,7 @@ Undo/Redo
 ===
 
 	u - undo last change
-	CTRL+R - redo last undo  
+	CTRL+r - redo last undo  
 
 
 Searching
