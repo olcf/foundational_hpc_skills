@@ -1054,7 +1054,11 @@ It was a long and bumpy ride (especially those last two sections), but you final
 Congratulations!
 We did not cover everything there is to know about Python (there is a lot!), but you should now have some basic foundation in Python programming.
 One of my favorite topics we did not cover is "user input", where Python prompts the user to type in things as the code is running -- this can be used to quickly test different values for the same variable in a program, for instance, without having to manually change the code in the program itself.
-A short tutorial covering this functionality can be found here: [GeeksforGeeks Tutorial](https://www.geeksforgeeks.org/python-3-input-function/)
+A short tutorial covering this functionality can be found here: [GeeksforGeeks Tutorial](https://www.geeksforgeeks.org/python-3-input-function/).
+
+An additional topic we did not cover that is extremely useful is how to include or embed a variable's data into a string (i.e., how to "format" a string to include a desired variable).
+We covered how to print a string and a variable, but not how to include the variable in the string itself.
+There are a few options to accomplish this (including something called "f-strings" which is getting popular), and a good summary of some of the options available to you can be found in this [RealPython Tutorial](https://realpython.com/python-f-strings/).
 
 This concludes all that you need to know before attempting the bonus challenges below.
 Don't be afraid to ask questions for anything covered in this guide -- we are here to help!
@@ -1320,3 +1324,5 @@ Challenges are listed by difficulty, with the first challenge being the "easiest
 * [Python Website](https://www.python.org/)
 * [Python Documentation](https://docs.python.org/3/)
 * [Python Tutorial](https://docs.python.org/3/tutorial/introduction.html)
+* [Including Variables in Strings](https://realpython.com/python-f-strings/)
+* [User Input Tutorial](https://www.geeksforgeeks.org/python-3-input-function/)
