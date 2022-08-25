@@ -1,0 +1,20 @@
+# Tracking header files too
+
+CXX=g++
+CPPFLAGS=-I.
+DEPS = randapi.hh   # Macro for set of header files on which the source files depend
+
+%.o: %.cc $(DEPS)   # This rule says that all .o files depend on the .cc version of the file and the headers in DEPS
+	$(CXX) -c -o $@ $< $(CPPFLAGS)
+
+  # -o $@ names the object file with what is on the left side of the :, in this case it will be a file.o
+  # $< is the first item on the dependencies list, in this case the .cc file
+  # Equivalent to: g++ -c -o myfile.o myfile.cc -I. --- for each myfile.o listed on line 27
+
+simple_test: initapi.o randapi.o test.o
+	$(CXX) -o test initapi.o randapi.o test.o
+
+.PHONY: clean
+
+clean:
+	rm -f *.o *.so test test1

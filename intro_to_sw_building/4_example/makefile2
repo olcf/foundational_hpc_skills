@@ -1,0 +1,7 @@
+# Using variables and macros
+
+CXX=g++        # Defines our compiler
+CPPFLAGS=-I.   # Flags to pass to compiler command
+
+simple_test: initapi.o randapi.o test.o
+	$(CXX) -o test initapi.o randapi.o test.o
