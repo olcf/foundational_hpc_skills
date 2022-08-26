@@ -19,6 +19,32 @@ To compile the source files into one a single executable, we could do the follow
 This creates our random number generator together with a small tester called `test`.
 Here `g++` not only compiles our randon number generator library, but links it to together with the tester.
 
+## Libraries
+
+The files `initapi.cc`, `randapi.cc`, and `randapi.hh` compose our library.  Instead of one large source file, we hav
+divided it into three smaller pieces that make the softare easier to work on as it grows.
+
+### Header files
+
+The file `randapi.hh` is a header file.  A header file typically contains a list of all the functions that a library provides.
+This list is the list of ==function declarations==.  This can be referred to as an interface.  Here we are declaring to
+the compiler that a function exists and how it is called (parameters and return types).
+
+The header is a good resource for other developers to find out how to use a library.
+
+It is a good practice to include documentation and comments in the header file.  Also, we have named the library `randAPI`
+where API refers to Application Programming Interface.  This is a common term in programming.  APIs are typically the
+layer of software which is used to communicate between to two components.
+
+In this simple example, the functionality for our library is included in the two source files, `randapi.cc` and `initapi.cc`.
+The function delcarations are in the header files, while the ==function definitions== are in the source files.  `randapi.cc`
+provides the code for generating the random numbers while `initapi.cc` provides the necessary code to initialize our random
+number generator.
+
+
+
+### Types of libraries
+
 ## Compiling a static library
 
 ```
