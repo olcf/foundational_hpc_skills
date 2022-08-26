@@ -21,13 +21,13 @@ Here `g++` not only compiles our randon number generator library, but links it t
 
 ## Libraries
 
-The files `initapi.cc`, `randapi.cc`, and `randapi.hh` compose our library.  Instead of one large source file, we hav
-divided it into three smaller pieces that make the softare easier to work on as it grows.
+The files `initapi.cc`, `randapi.cc`, and `randapi.hh` compose our library.  Instead of one large source file, we have
+divided it into three smaller pieces that make the software easier to work on as it grows.
 
 ### Header files
 
 The file `randapi.hh` is a header file.  A header file typically contains a list of all the functions that a library provides.
-This list is the list of ==function declarations==.  This can be referred to as an interface.  Here we are declaring to
+This list is the list of **function declarations**.  This can be referred to as an interface.  Here we are declaring to
 the compiler that a function exists and how it is called (parameters and return types).
 
 The header is a good resource for other developers to find out how to use a library.
@@ -37,13 +37,20 @@ where API refers to Application Programming Interface.  This is a common term in
 layer of software which is used to communicate between to two components.
 
 In this simple example, the functionality for our library is included in the two source files, `randapi.cc` and `initapi.cc`.
-The function delcarations are in the header files, while the ==function definitions== are in the source files.  `randapi.cc`
+The function delcarations are in the header files, while the **function definitions** are in the source files.  `randapi.cc`
 provides the code for generating the random numbers while `initapi.cc` provides the necessary code to initialize our random
 number generator.
 
-
-
 ### Types of libraries
+
+The two types of libraries we will discuss are static and shared/dynamic software libraries.  A static library is a collection
+of object files, conventionally ending in `.a` suffix.  When created an application using a static library, the library is
+copied into the final executable file.  In our aboove compilation example, the `randapi` library is staticly link to the test
+application and the result is a single executable file.
+
+The second type of library is a shared or dynamic library.  A shared library is separate from the executable binary file and
+is linked at runtime (when the application is executed).  A shared library will typically have a `.so` file extension.
+Shared libraries will be covered more in the Example 3.
 
 ## Compiling a static library
 
