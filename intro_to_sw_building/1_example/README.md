@@ -55,7 +55,8 @@ In this directory there are the following files:
  hello.cc
 ```
 
-As with all good programming tutorials this starts with `Hello, world!` in the C++ source file, `hello.cc`.
+As with all good programming tutorials this starts with `Hello, world!`
+In the C++ source file, `hello.cc`, we have:
 
 ```
 #include <iostream>
@@ -65,20 +66,41 @@ int main () {
 }
 ```
 
-Running the command:
+We compile and execute the example by running the commands:
 
 ```
  $ g++ hello.cc
+
  $ ./a.out
  Hello, world!
 ```
 
 Congratulations.  You've built the first example application and executed it.  Calling `g++` on `hello.cc`
-compiles and links together everything that is needed to run the application.  Note that the single command
-compiles AND links the application.  The first step, compiling, takes the human-readable (we hope) code and
-translates it to something that a computer can read called machine language.  The output from compilation is
-an object file.  In the second step, these objects files are then combined with any outside files, or 
-libraries, to create an executable file.
+compiles and links together everything that is needed to run the application.  In this case, it creates a 
+file called `a.out` in the same directory that we are in.  `a.out` is the default name of a file created by
+`g++`.  If you run:
+
+```
+ $ g++ -o hello hello.cc
+
+ $ ls -1
+ README.md
+ a.out
+ hello
+ hello.cc
+
+ $ ./hello
+ Hello, world!
+```
+
+Now you have an executable called `hello` that will output "Hello, world!" to the screen.
+
+### Compilation Details
+
+Note that the single command compiles AND links the application.  The first step, compiling, takes the 
+human-readable (we hope) code and translates it to something that a computer can read called machine 
+language.  The output from compilation is an object file.  In the second step, these objects files are then 
+combined with any outside files, or libraries, to create an executable file.
 
 If you look at our `hello.cc`, on the first line there is:
 ```
