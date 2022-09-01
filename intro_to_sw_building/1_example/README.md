@@ -16,7 +16,7 @@ To rid our environment of tools we do not need, execute the following:
  $ module purge
 ```
 
-This will remove any software tools and libraries, and then do:
+This will remove the packages loaded by default.  To load the recommended compiler, we do:
 
 ```
  $ module load gcc
@@ -78,7 +78,7 @@ We compile and execute the example by running the commands:
 Congratulations.  You've built the first example application and executed it.  Calling `g++` on `hello.cc`
 compiles and links together everything that is needed to run the application.  In this case, it creates a 
 file called `a.out` in the same directory that we are in.  `a.out` is the default name of a file created by
-`g++`.  If you run:
+`g++`.  If you add the `-o <name>` flag then you can specify the name of the executable file as show here:
 
 ```
  $ g++ -o hello hello.cc
