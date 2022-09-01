@@ -1,21 +1,39 @@
 # Example 2
 
+In this example, we will be building a random number generator using multiple source files combined into a
+library then linked to an executable.
+
 ## Compiling multiple source files.
 
 In this directory there are these files:
 
 ```
-README
-initapi.cc
-randapi.cc
-randapi.hh
-test.cc
+ $ ls -1
+ README
+ initapi.cc
+ randapi.cc
+ randapi.hh
+ test.cc
 ```
 
-To compile the source files into one a single executable, we could do the following:
+Similar to example one, to compile the source files into one a single executable, we could do the following:
+
 ```
  $ g++ initapi.cc randapi.cc test.cc -o test
+
+ $ ls -1
+ README
+ initapi.cc
+ randapi.cc
+ randapi.hh
+ test
+ test.cc
+
+ $ ./test
+ getRand () avg: 5
+ getSRand () avg: 0.501096
 ```
+
 This creates our random number generator together with a small tester called `test`.
 Here `g++` not only compiles our randon number generator library, but links it to together with the tester.
 
@@ -61,10 +79,10 @@ Shared libraries will be covered more in the Example 3.
 ```
 
 This creates a library named `libmyrand.a` in three steps.  The first two commands are similar to those we used earlier,
-but here we have the `-c` flag which tells gcc to only compile (not link) the source files.  Next, we issue an `ar` command
+but here we have the `-c` flag which tells g++ to only compile (not link) the source files.  Next, we issue an `ar` command
 to build the library from the two compiled objects.  The `-cru` flags here are standard flags.  `c` indicated to create the
 library unless it already exists, `r` replaces existing objects in the library, and `u` says to only replace if the objects
-are newer than those already there.
+are newer than those already there.  These flags are useful when you are debugging and recompiling your code often.
 
 Now we have `libmyrand.a` which contains both `initapi.o` and `randapi.o`.
 
@@ -77,7 +95,7 @@ To see the contents of a static library, you can do the following:
 
 ## Linking to a library
 
-We can build the tester application as follows:
+We can build the tester application and connect it to our random number generator library as follows:
 
 ```
  $ g++ test.cc -L. -lmyrand -o test
@@ -88,8 +106,8 @@ We can build the tester application as follows:
 ```
 
 Here we compile `test.cc` then link the `test.o` object with `libmyrand.a` to product the `test` executable.  Here the `-L.`
-is used to tell gcc that our library is in the current directory (shown as the shortcut `.`), and the `-l` flag identifies
-the name of the library we wish to link against, in this case `myrand`.  gcc automatical surrounds the name of the library
+is used to tell g++ that our library is in the current directory (shown as the shortcut `.`), and the `-l` flag identifies
+the name of the library we wish to link against, in this case `myrand`.  g++ automatically surrounds the name of the library
 with `lib` and `.a` when looking for it.
 
 To clean up and remove files: `rm *.o test`
