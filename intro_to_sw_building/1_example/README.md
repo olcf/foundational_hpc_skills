@@ -100,7 +100,8 @@ Now you have an executable called `hello` that will output "Hello, world!" to th
 Note that the single command compiles AND links the application.  The first step, compiling, takes the 
 human-readable (we hope) code and translates it to something that a computer can read called machine 
 language.  The output from compilation is an object file.  In the second step, these objects files are then 
-combined with any outside files, or libraries, to create an executable file.
+combined with any outside files, or libraries, to create an executable file.  In the next examples in this
+tutorial, we will break this down so you can see the individual steps.
 
 If you look at our `hello.cc`, on the first line there is:
 ```
