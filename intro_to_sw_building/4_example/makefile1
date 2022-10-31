@@ -1,0 +1,4 @@
+# Basic makefile
+
+simple_test: initapi.cc randapi.cc test.cc
+	g++ -o test initapi.cc randapi.cc test.cc -I.
