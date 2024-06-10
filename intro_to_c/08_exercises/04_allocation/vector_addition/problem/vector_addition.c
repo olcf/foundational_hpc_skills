@@ -9,6 +9,9 @@ int main(){
     int N = 50;
 
     // TODO: Define 3 vectors called A, B, and C (each of length N) here
+    // As an additional challenge, create a copy of this file and try 
+    // making one file with static memory allocation and the other with
+    // dynamic memory allocation 
 
 
     /* This loop performs the following initializations
