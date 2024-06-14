@@ -28,10 +28,10 @@ may be `%` or `>`. In our instance it is `$`. The `$` is preceeded by informatio
 interactions with the computers filesystems), and the name of the directory (file, `~` is "home") 
 you are currently located in. 
 
-On Ascent, the information that represents the command line will look like this:
+On Odo, the information that represents the command line will look like this:
 
 ```
-[your_id@login1.ascent ~]$
+[your_id@login1.odo ~]$
 ```
 
 > NOTE: In the following examples, replace "your_id" with whatever your user id is for logging in to 
