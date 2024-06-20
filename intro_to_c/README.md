@@ -28,6 +28,7 @@ Table of Contents:
   	* [Standard Library Functions](#slf)
  	* [User-Defined Functions](#udf)
 * [Addresses and Pointers](#add)
+* [Back to Functions](#backtofunc)
 * [Memory Allocation](#mem)
   	* [Stack](#stack)
   	* [Heap](#heap)
@@ -571,6 +572,11 @@ $ ./if_statement
 i is equal to 1
 ```
 
+### Pause for Exercises
+- Compile and run the code in the directories 01_simple_c_program, 02_data_types, 03_loops, 04_if_statements. Relate the code to the sections you read above.
+- In 08_exercises/1_datatypes_loops_if, complete the fibonacci exercise. Fill out the TODO sections.
+
+
 ### <a name="functions"></a>5. Functions
 A reusable block of code that performs a specific task
 
@@ -735,7 +741,7 @@ The value stored at the memory address held in p_x: 2.713000
 Another Example of using Addresses and Pointers (06_addresses_and_pointers/pointers_2/pointers_2.c)
 ```*p_x = 3.141```: (dereference operator) – also allows you to change the value stored at that memory address
 
-<ins>Back to Functions</ins>:
+### <a name="backtofunc"></a>Back to Functions:
 ```
 /*---------------------------------------------------------------
 Program that CORRECTLY shows how to use a function to change
@@ -780,6 +786,13 @@ Remember, the * used declare the pointer variable, i, in the function argument i
 ```printf(“ ... %d\n”, *i)```:  
 
 The * in these statements is the dereference operator, which allows you to access the value of the variable associated with the memory address.
+
+
+### Pause for Exercises
+- Compile and run the code in 05_functions, 06_addresses_and_pointers. Relate the code to the topics you learned above.
+- Complete the exercises in 08_exercises/02_pointers and 08_exercises/03_functions by filling out the TODO sections.
+
+
 
 ### <a name="mem"></a>7. Memory Allocation
 ### <a name="stack"></a> Stack
@@ -879,6 +892,11 @@ f_array_dyn[2] = 0.500000
 f_array_dyn[3] = 0.750000
 f_array_dyn[4] = 1.000000
 ```
+
+### Pause for Exercises
+- Compile and run code in 07_memory_allocation. Relate the code to the topic you learned above.
+- Complete the exercise in 08_exercises/04_allocation by filling out the TODO sections.
+
 
 ### <a name="exercises"></a>8. Exercises and Resources
 <ins>Exercises that go with these slides (as well as some examples to work through)</ins>:
