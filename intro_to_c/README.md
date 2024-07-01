@@ -144,6 +144,7 @@ $
  ```
 Result: Hello World (with a new line)
 
+
 ### Format Tags: represented by a percent sign (%) followed by a character that specifies the type of formatting
 * %c: Character
 * %d: Integer
@@ -167,6 +168,8 @@ printf(“The value of the float is %.2f\n”, x);
 * x represents the variable whose value is used in the format tag
 
 Result: The value of the float is 3.14
+
+See more format tags [here](https://cplusplus.com/reference/cstdio/printf/)
  
 ### <a name="arrays"></a> Arrays
 ### C Arrays - Data structure that holds a fixed number of data elements of a specific type
