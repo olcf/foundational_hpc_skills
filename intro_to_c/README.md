@@ -694,8 +694,9 @@ After calling the function, number = 1
  
  }
 ```
-```%p```: format tag to print address
-```&```:  reference operator – gives the address of the variable
+`%p`: format tag to print address
+
+`&`:  reference operator – gives the address of the variable
 
 ```
 $ gcc –o variable_addresses variable_addresses.c
@@ -726,9 +727,12 @@ int main(){
 }
 ```
 
-``` float *p_x; ```: The pointer is assigned the value of the memory address of x
-``` p_x = &x; ```: The pointer is assigned the value of the memory address of x
-``` *p_x```: * (dereference operator) – gives the value stored at a memory address
+` float *p_x; `: The pointer is assigned the value of the memory address of x
+
+`p_x = &x;`: The pointer is assigned the value of the memory address of x
+
+`*p_x`: * (dereference operator) – gives the value stored at a memory address
+
 
 To compile and run code:
 ```
@@ -742,7 +746,8 @@ The value stored at the memory address held in p_x: 2.713000
 ```
 
 Another Example of using Addresses and Pointers (06_addresses_and_pointers/pointers_2/pointers_2.c)
-```*p_x = 3.141```: (dereference operator) – also allows you to change the value stored at that memory address
+
+`*p_x = 3.141`: (dereference operator) – also allows you to change the value stored at that memory address
 
 ### <a name="backtofunc"></a>Back to Functions:
 ```
