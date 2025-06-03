@@ -1581,6 +1581,8 @@ Some additional parameters you may want to consider when saving figures:
 
 * **Interactive Jupyter Plots**: Not featured in this notebook was the functionality of interactive figures (e.g., matplotlib plots that you are able to zoom, pan, etc.). To activate this feature in Jupyter, put either `%matplotlib ipympl` or `%matplotlib widget` at the top of a Jupyter cell that you want to have interactive matplotlib figures. (must have `ipympl` installed)
 
+* **Forgot to create `ax` initially**: If you forgot to use the Axes (`ax`) functionality when originally creating the figure, you can retrieve the axis of the current figure by doing `ax=plt.gca()`. This allows you to get to the Axes functions without having to go back and recreate your entire script!
+
 ## 3.3 Additional Packages to Look Into <a class="anchor" id="more-packages"></a>
 
 * Python Packages
