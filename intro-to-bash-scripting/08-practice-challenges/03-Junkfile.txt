@@ -1,0 +1,17 @@
+In this folder you will find a subdirectory titled "noise"
+It contains nothing but junk data - random noise that doesn't mean anything important.
+
+Your job is to find the *largest* line of the *largest* text file using a bash script.
+
+
+Print the following to screen:
+	The name of the largest text file
+	The contents of the largest line (within that text file)
+	The line # of the largest line (within that text file)
+	The line size of the largest line (within that file).
+
+
+Bonus!!!!
+	- Find and print to screen the average file size of each file
+	- I hid a message in the winning file-line. See if you can find and decode it!
+

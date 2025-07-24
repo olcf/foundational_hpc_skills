@@ -1,0 +1,3 @@
+Line 0: I can be read through within a bash file! Pretty cool, right? 
+Line 1: You can use me as input with the '<' operator
+Line 2: This is the main power of bash: the ability to interact with the filesystem natively
