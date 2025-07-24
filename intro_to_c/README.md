@@ -34,6 +34,12 @@ Table of Contents:
   	* [Heap](#heap)
 * [Exercises](#exercises)
 
+Before getting started, make sure that you have a fresh Unix terminal open. Once you have a terminal open, change directories to the intro_to_c directory:
+```
+$ cd ~/foundational_hpc_skills/intro_to_c
+```
+> Note: The above syntax is assuming you stored the `foundational_hpc_skills` repository in your Home directory.
+
 ### <a name="simple"></a>1. Simple Example
 ```
 /*------------------------------------------------------------
@@ -67,6 +73,7 @@ To compile the C program, use the gcc compiler to compile the C code into an exe
 ```
 $ gcc simple.c
 ```
+> Note: $ is known as the Bash Prompt, which means you can enter a command and press Enter to execute it.
 
 An executable is named a.out by default. To view the list of files in a current directory, use the `ls` command: 
 ```
@@ -129,6 +136,7 @@ Output:
 Hello World$
  ```
 Result: Hello World
+> Note: To get a new line on the prompt, insert a new line using (\n)
 
 <ins>Example 2</ins>:
 
@@ -180,6 +188,7 @@ int A[10]; // declares an array of 10 integers
 | A[0]          | A[1]          | A[2] | A[3] | A[4]         | A[5]        | A[6] | A[7]|  A[8] | A[9]|
 | ------------- | ------------- | -------------   | -------------   | ------------- | -------------   | -------------   | ------------- | -------------   | -------------  |       
 
+> Note: // is used to comment the code 
 * Each Element is 4 bytes for an integer
 
 To assign values to the array elements,
@@ -681,6 +690,8 @@ After calling the function, number = 1
 * Changes to the formal arguments do not affect the actual arguments.
 
 ### <a name="add"></a>6. Addresses and Pointers
+Addresses and pointers allow programmers to effectively utilize memory and manipulate data.
+
 <ins>Variable Addresses</ins>:
 * The memory address of a variable can be referenced using the reference operator, &
 
@@ -856,6 +867,13 @@ f_array[2] = 0.500000
 f_array[3] = 0.750000
 f_array[4] = 1.000000
 ```
+
+<ins>Dynamic vs Static Memory Allocation</ins>:
+| Differences         | Dynamic Memory        | Static Memory | 
+| ------------- | -------------   | -------------   |
+| Allocation Occurs At          | Runtime       | Compile Time | 
+| Uses          | Heap       | Stack | 
+| Reusability          | Reusable memory       | No memory reusability | 
 
 <ins>Dynamic</ins>:
 Example of Dynamic Memory Allocation (07_memory_allocation/dynamic.c):
