@@ -1,0 +1,7 @@
+FizzBuzz is a classic programming problem that is a great first-time exercise. Here's how it works:
+
+Given the numbers 1 through 100, print each number with the following ruleset:
+	1) If the number is a multiple of 3, print "Fizz"
+	2) If the number is a multiple of 5, print "Buzz"
+	3) If the number is a multiple of 3 AND 5, print "FizzBuzz"
+	4) If the number is NOT a multiple of 3 OR 5, print the number regularly.

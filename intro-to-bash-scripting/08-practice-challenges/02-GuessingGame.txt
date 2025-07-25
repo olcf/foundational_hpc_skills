@@ -1,0 +1,15 @@
+I want you to design your own little guessing game. Here is the design:
+
+	1. The computer starts with a number between 1-10.
+	2. Read a user input guess. 
+	3. Compare the user input to the actual number.
+	4. If the guess if lower/higher than the actual number, tell the user and retake another input. Keep repeating this
+		until they get the correct answer. 
+	5. If the guess is correct, print a "You win!" statement.
+
+(Hint: I wonder if there is a special variable that helps with creating random numbers in bash...)
+
+
+Bonus!!!!
+	Customize the game. How many numbers do you want? Do you want the numbers to be between a range?
+	Do you want a GUI? Do you want colors for higher or lower? Do you want to be able to restart or quit at anytime?
