@@ -594,4 +594,4 @@ Here is a list of very good resources to use for people interested in bash scrip
 - [GeeksforGeeks intro to bash](https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/) Great lessons for practice.
 - [Software carpentry](https://swcarpentry.github.io/shell-novice/index.html) Covers a lot of managing **files** that this intro does not.
 
-**Disclaimer:** This guide was written by somebody who only really has ~1.5 years of bash scripting and is nowhere being an "expert" in the subject. The guide itself was heavily inspired by *The Linux Documentation Project*'s introductory explorations as well as a lot of things the author wish they knew / were taught when starting out. 
+**Final Notes:** This guide was heavily inspired by *The Linux Documentation Project - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)*, written by Mendel Cooper in 2014. If you are legitimately interested in digging into more detail than a simple intro guide could handle, that is the perfect place to start. 
